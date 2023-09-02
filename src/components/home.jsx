@@ -9,7 +9,7 @@ function Home() {
       </header>
       <section className="home-features">
         <div className="feature">
-          <h2>Browse</h2>
+          <h2>Featured Items</h2>
           <p>Discover a wide range of items from different brands.</p>
         </div>
         <div className="feature">
