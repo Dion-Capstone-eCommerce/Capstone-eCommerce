@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import Footer from './footer';
+
 
 function RegistrationForm({ BASE_URL }) {
   const [username, setUsername] = useState('');
@@ -118,6 +120,7 @@ function RegistrationForm({ BASE_URL }) {
           <button onClick={() => navigate('/login')}>Go to Login</button>
         </div>
       )}
+      <Footer />
     </div>
   );
 }

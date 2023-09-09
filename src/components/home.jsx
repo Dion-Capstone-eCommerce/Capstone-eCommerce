@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './footer';
 
 function Home() {
   return (
@@ -21,14 +22,10 @@ function Home() {
           <p>Communicate with my team through our messaging system.</p>
         </div>
       </section>
-
-      <footer className="home-footer">
-        <p>&copy; 2023 Crystal Clear Sounds Inc. All rights reserved.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
-
 
 
 export default Home;

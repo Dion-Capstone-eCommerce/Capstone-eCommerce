@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchWithHeaders } from "../Helpers/api";
+import Footer from './footer';
 
 function Login({ BASE_URL, handleLoginSuccess }) {
   const [username, setUsername] = useState("");  // State to store username 
   const [password, setPassword] = useState(""); // State to store password inputs
+  const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState(""); // State to handle error messages
   const navigate = useNavigate(); // Hook to navigate to different routes
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   // Function to handle login form submission
   const handleLoginSubmit = async (event) => {
@@ -47,20 +53,26 @@ function Login({ BASE_URL, handleLoginSuccess }) {
           />
         </div>
         <div>
-          <label htmlFor="loginPassword">Password</label>
+          <label htmlFor="password">Password</label>
           <input
-            type="password"
+            type={showPassword ? 'text' : "password"}
+            placeholder=""
             id="loginPassword"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          <button type="button" onClick={togglePasswordVisibility}>
+        {showPassword ? 'Hide' : 'Show'} Password
+      </button>
         </div>
         <button type="submit">Login</button>
       </form>
+    <Footer />  
     </div>
   );
 }
+
 
 export default Login;
 
