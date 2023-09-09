@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../images/blackwhitesimplemusiclogo.gif';
+import logo from './images/blackwhitesimplemusiclogo.gif';
 import { Link, useLocation } from 'react-router-dom';
 
 
