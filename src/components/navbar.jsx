@@ -1,7 +1,5 @@
 import React from 'react';
-import logo from './images/blackwhitesimplemusiclogo.gif';
 import { Link, useLocation } from 'react-router-dom';
-
 
 function Navbar() {
   const location = useLocation();
@@ -15,8 +13,7 @@ function Navbar() {
 
   return (
     <div className="navbar-item-container">
-      <img src={logo} alt="Music Logo" className="navbar-logo" />
-
+  
       <li className="navbar-item">
         <Link to="/" onClick={handleClick}>
           Home

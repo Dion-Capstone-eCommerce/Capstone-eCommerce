@@ -4,10 +4,15 @@ import { useNavigate, Link } from 'react-router-dom';
 function RegistrationForm({ BASE_URL }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [registrationSuccess, setRegistrationSuccess] = useState(false); 
   const navigate = useNavigate();
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   // Function to Handle successful registration
   const handleRegistrationSuccess = token => {
@@ -51,47 +56,56 @@ function RegistrationForm({ BASE_URL }) {
 
   return (
       <div className="registration-form-container">
-      <h2>Register to be a part of the Strangers Things community!</h2>
-      <p>Sell your stuff!</p>
-      <p>Send messages!</p>
-      <p>All the cool kids are doing it!!</p>
+      <h2>Register to create an account.</h2>
+      <p>Password must be upper and lowercase letters, numbers, and characters.</p>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
       {!registrationSuccess ? ( // Render the registration form if not successful
          <form className="registration-form" onSubmit={handleSubmit}>
         <div>
         <div className="form-group">
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">Username:</label>
           <input
             type="text"
+            placeholder="Username must be 5 letters long"
+            style={{ width: '250px'}}
             id="username"
             value={username}
             onChange={e => setUsername(e.target.value)}
-            minLength={4} // Set minimum length
+            minLength={5} // Set minimum length
             required
           />
         </div>
         <div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Password:</label>
           <input
-            type="password"
+            type={showPassword ? 'text' : "password"}
+            placeholder=""
+            style={{ width: '250px'}}
             id="password"
             value={password}
             onChange={e => setPassword(e.target.value)}
-            minLength={8} // Set minimum length
+            pattern="^(?=,*\d)(?=,*[a-zA-Z])(?=,*\W).{8,}$"
             required
+            title="Password must contain at least one digit, one letter, one special character, and be at least 8 characters long."
           />
+          <button type="button" onClick={togglePasswordVisibility}>
+        {showPassword ? 'Hide' : 'Show'} Password
+      </button>
         </div>
         <div>
-          <label htmlFor="confirmPassword">Confirm Password</label>
+          <label htmlFor="confirmPassword">Confirm Password:</label>
           <input
-            type="password"
+            type={showPassword ? 'text' : "password"}
             id="confirmPassword"
             value={confirmPassword}
             onChange={e => setConfirmPassword(e.target.value)}
             minLength={8} // Set minimum length
             required
           />
+           <button type="button" onClick={togglePasswordVisibility}>
+        {showPassword ? 'Hide' : 'Show'} Password
+      </button>
         </div>
         <button type="submit" className="submit-button">Register</button>
         </div>
