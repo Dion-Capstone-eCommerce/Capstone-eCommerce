@@ -9,8 +9,9 @@ export const Shop = () => {
                 <h1>My Shop</h1>
             </div>
             <div className="products"> {PRODUCTS.map((product) => {
-                <Product data={product} />
-            })}</div>
+                return <Product data={product} key={product.id} />;
+            })}
+            </div>
         </div>
-    )
-}
+    );
+};
