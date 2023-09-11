@@ -1,4 +1,4 @@
-import product1 from "./images/sonyspeakers.png";
+import product1 from "./images/sonyXS-163ES.png";
 // import product2 from ''
 // import product3 from ''
 // import product4 from ''
@@ -12,7 +12,7 @@ import product1 from "./images/sonyspeakers.png";
 export const PRODUCTS = [
     {
         id:1,
-        title:'Sony Mobile ES',
+        title:'Sony Mobile ES XS-163ES',
         price: 499.99,
         category:'Speakers',
         description:'6 1/2 inch 3-Way Component Speakers',
