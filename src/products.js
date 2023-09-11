@@ -1,13 +1,19 @@
-import product1 from "./images/sonyXS-163ES.png";
-// import product2 from ''
-// import product3 from ''
-// import product4 from ''
-// import product5 from ''
-// import product6 from ''
-// import product7 from ''
-// import product8 from ''
-// import product9 from ''
-// import product10 from ''
+import product1 from "./images/speakers/sonyXS-163ES.png";
+// import product2 from './images/sonyXS-163ES.png'
+// import product3 from './images/sonyXS-163ES.png'
+// import product4 from './images/sonyXS-163ES.png'
+// import product5 from './images/sonyXS-163ES.png'
+// import product6 from './images/sonyXS-163ES.png'
+// import product7 from './images/sonyXS-163ES.png'
+// import product8 from './images/sonyXS-163ES.png'
+// import product9 from './images/sonyXS-163ES.png'
+// import product10 from './images/sonyXS-163ES.png'
+// import product11 from './images/sonyXS-163ES.png'
+// import product12 from './images/sonyXS-163ES.png'
+// import product13 from './images/sonyXS-163ES.png'
+// import product14 from './images/sonyXS-163ES.png'
+// import product15 from './images/sonyXS-163ES.png'
+// import product16 from './images/sonyXS-163ES.png'
 
 export const PRODUCTS = [
     {
@@ -89,5 +95,53 @@ export const PRODUCTS = [
     //     category:'...',
     //     description:'...',
     //     image: product10, 
+    // }
+    // {
+    //     id:11,
+    //     title:'...',
+    //     price: 1,
+    //     category:'...',
+    //     description:'...',
+    //     image: product11, 
+    // }
+    // {
+    //     id:12,
+    //     title:'...',
+    //     price: 1,
+    //     category:'...',
+    //     description:'...',
+    //     image: product12, 
+    // }
+    // {
+    //     id:13,
+    //     title:'...',
+    //     price: 1,
+    //     category:'...',
+    //     description:'...',
+    //     image: product13, 
+    // }
+    // {
+    //     id:14,
+    //     title:'...',
+    //     price: 1,
+    //     category:'...',
+    //     description:'...',
+    //     image: product14, 
+    // }
+    // {
+    //     id:15,
+    //     title:'...',
+    //     price: 1,
+    //     category:'...',
+    //     description:'...',
+    //     image: product15, 
+    // }
+    // {
+    //     id:16,
+    //     title:'...',
+    //     price: 1,
+    //     category:'...',
+    //     description:'...',
+    //     image: product16, 
     // }
 ]
