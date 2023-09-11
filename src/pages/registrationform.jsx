@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import Footer from './footer';
+import Footer from '../footer/footer';
 
 
 function RegistrationForm({ BASE_URL }) {

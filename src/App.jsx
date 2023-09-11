@@ -1,14 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./App.css";
+import { Shop } from "./pages/shop/shop";
 import "./index.css";
-import NavBar from "./components/navbar";
-import Home from "./components/home";
-import RegistrationForm from "./components/registrationform";
-import Login from "./components/login";
+import NavBar from "./navbar/navbar";
+import Home from "./pages/home";
+import RegistrationForm from "./pages/registrationform";
+import Login from "./pages/login";
 import { logIn, logOut, isLoggedIn } from "./Helpers/authhelpers";
 import { fetchWithHeaders } from "./Helpers/api";
+// import { Cart } from "./pages/cart/cart";
 
 export default function App() {
   const BASE_URL = 'https://fakestoreapi.com/';
@@ -46,6 +47,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<RegistrationForm BASE_URL={BASE_URL} />} />
+          {/* <Route path="/cart" element={<Cart />} /> */}
+          <Route path="/shop" element={<Shop />} />
           <Route path="/login" element={<Login BASE_URL={BASE_URL} handleLoginSuccess={handleLoginSuccess} />} />
         </Routes>
       </div>

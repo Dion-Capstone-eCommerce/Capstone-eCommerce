@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchWithHeaders } from "../Helpers/api";
-import Footer from './footer';
+import Footer from '../footer/footer';
 
 function Login({ BASE_URL, handleLoginSuccess }) {
   const [username, setUsername] = useState("");  // State to store username 
