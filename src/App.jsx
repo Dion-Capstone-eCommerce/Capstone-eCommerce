@@ -9,6 +9,7 @@ import RegistrationForm from "./pages/registrationform";
 import Login from "./pages/login";
 import { logIn, logOut, isLoggedIn } from "./Helpers/authhelpers";
 import { fetchWithHeaders } from "./Helpers/api";
+import { ShopContextProvider } from "./context/shop-context";
 // import { Cart } from "./pages/cart/cart";
 
 export default function App() {
@@ -40,8 +41,9 @@ export default function App() {
   };
 
   return (
+    <div className="app">
+    <ShopContextProvider>
     <Router>
-      <div className="app">
       <NavBar isLoggedIn={Boolean(token)} logout={handleLogout} />
       
         <Routes>
@@ -51,8 +53,9 @@ export default function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/login" element={<Login BASE_URL={BASE_URL} handleLoginSuccess={handleLoginSuccess} />} />
         </Routes>
-      </div>
-    </Router>
+      </Router>
+    </ShopContextProvider>
+    </div>
   );
 }
 
