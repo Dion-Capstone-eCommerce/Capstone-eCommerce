@@ -10,7 +10,8 @@ import Login from "./pages/login";
 import { logIn, logOut, isLoggedIn } from "./Helpers/authhelpers";
 import { fetchWithHeaders } from "./Helpers/api";
 import { ShopContextProvider } from "./context/shop-context";
-// import { Cart } from "./pages/cart/cart";
+import './App.css';
+import { Cart } from "./pages/cart/cart";
 
 export default function App() {
   const BASE_URL = 'https://fakestoreapi.com/';
@@ -41,7 +42,7 @@ export default function App() {
   };
 
   return (
-    <div className="app">
+    <div className="App">
     <ShopContextProvider>
     <Router>
       <NavBar isLoggedIn={Boolean(token)} logout={handleLogout} />
@@ -51,6 +52,7 @@ export default function App() {
           <Route path="/register" element={<RegistrationForm BASE_URL={BASE_URL} />} />
           {/* <Route path="/cart" element={<Cart />} /> */}
           <Route path="/shop" element={<Shop />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login BASE_URL={BASE_URL} handleLoginSuccess={handleLoginSuccess} />} />
         </Routes>
       </Router>
