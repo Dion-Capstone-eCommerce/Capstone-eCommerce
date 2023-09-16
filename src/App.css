@@ -2,7 +2,15 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+}
 
+body {
+  background-image: url('images/musicbackground4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
 .logo {
@@ -70,4 +78,13 @@
     width: 100%;
     margin: 0;
   }
+}
+
+.footer {
+  text-align: center;
+}
+
+button {
+  font-size: 15px; /* Adjust the font size */
+  padding: 1px 4px; /* Adjust padding for width and height */
 }

@@ -31,31 +31,35 @@ function Navbar() {
       </button>
       {isDropdownOpen && (
         <ul className="dropdown-menu">
-          <li className="navbar-item">
-            <Link to="/" onClick={handleClick}>
-              Home <House size={32} color="#f00a0a"/>
+          <li className="navbar-item" class= 'active'>
+            <Link to="/" onClick={handleClick} style={{ color: 'black' }}>
+              Home <House size={32} color="black"/>
             </Link>
           </li>
+
           <li className="navbar-item">
-            <Link to="/register" onClick={handleClick}>
-              Register <UserPlus size={32} color="#f00a0a"/>
+            <Link to="/register" onClick={handleClick} style={{ color: 'black' }}>
+              Register <UserPlus size={32} color="black"/>
             </Link>
           </li>
+          
           {!isLoggedIn && (
             <li className="navbar-item">
-              <Link to="/login" onClick={handleClick}>
-                Sign In<SignIn size={32} color="#f00a0a"/>
+              <Link to="/login" onClick={handleClick} style={{ color: 'black' }}>
+                Sign In<SignIn size={32} color="black"/>
               </Link>
             </li>
           )}
+
           <li className="navbar-item">
-            <Link to="/shop" onClick={handleClick}>
-              Shop <ShoppingBagOpen size={32} color="#f00a0a"/>
+            <Link to="/shop" onClick={handleClick} style={{ color: 'black' }}>
+              <div>Shop</div> <ShoppingBagOpen size={32} color="black"/>
             </Link>
           </li>
+
           <li className="navbar-item">
-            <Link to="/cart" onClick={handleClick}>
-              Cart <ShoppingCart size={32} color="#f00a0a"/>
+            <Link to="/cart" onClick={handleClick} style={{ color: 'black' }}>
+              <div>Cart</div> <ShoppingCart size={32} color="black"/>
             </Link>
           </li>
         </ul>

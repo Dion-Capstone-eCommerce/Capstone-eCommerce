@@ -4,6 +4,8 @@ import { PRODUCTS } from "../../products";
 import { CartItem } from "./cart-item";
 import { useNavigate } from "react-router-dom";
 import "./cart.css";
+import Footer from '../../footer/footer';
+
 
 export const Cart = () => {
   const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
@@ -41,6 +43,7 @@ export const Cart = () => {
       ) : (
         <h1> Your Shopping Cart is Empty</h1>
       )}
+      <Footer />
     </div>
   );
 };

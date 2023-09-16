@@ -32,7 +32,7 @@ function RegistrationForm({ BASE_URL }) {
       return;
     }
     try {
-      const response = await fetch(`${BASE_URL}/users/register`, {
+      const response = await fetch(`${BASE_URL}users/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../footer/footer';
 
 function Home() {
+
   return (
     <div className="home-container">
       <header className="home-header">

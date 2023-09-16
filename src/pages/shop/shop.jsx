@@ -2,6 +2,8 @@ import React from "react";
 import { PRODUCTS } from "../../products";
 import { Product } from './product';
 import './shop.css';
+import Footer from '../../footer/footer';
+
 
 export const Shop = () => {
     return (
@@ -14,6 +16,7 @@ export const Shop = () => {
                  <Product data={product} />
             ))}
             </div>
+            <Footer />
         </div>
     );
 };

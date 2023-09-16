@@ -14,16 +14,25 @@ function Login({ BASE_URL, handleLoginSuccess }) {
     setShowPassword(!showPassword);
   };
 
-  // Function to handle login form submission
-  const handleLoginSubmit = async (event) => {
-    event.preventDefault();
+  // Function to send login request
+  const login = async () => {
     try {
-      const data = await fetchWithHeaders(`${BASE_URL}/users/login`, "POST", { // Make a login request with provided credentials
-        user: {
-          username,
-          password,
+      const response = await fetch(`${BASE_URL}/auth/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify({
+          username: username,
+          password: password,
+        }),
       });
+
+      if (!response.ok) {
+        throw new Error('Login failed');
+      }
+
+      const data = await response.json();
 
       if (data.success) {
         handleLoginSuccess(data.data.token); // Call the handleLoginSuccess function to set the token
@@ -35,6 +44,12 @@ function Login({ BASE_URL, handleLoginSuccess }) {
     } catch (error) {
       setErrorMessage("An error occurred during login"); // Display error message for any other login errors
     }
+  };
+
+  // Function to handle login form submission
+  const handleLoginSubmit = (event) => {
+    event.preventDefault();
+    login(); // Call the login function to send the login request
   };
 
   return (
@@ -63,18 +78,18 @@ function Login({ BASE_URL, handleLoginSuccess }) {
             required
           />
           <button type="button" onClick={togglePasswordVisibility}>
-        {showPassword ? 'Hide' : 'Show'} Password
-      </button>
+            {showPassword ? 'Hide' : 'Show'} Password
+          </button>
         </div>
         <button type="submit">Login</button>
       </form>
-    <Footer />  
+      <Footer />  
     </div>
   );
 }
 
-
 export default Login;
+
 
 
 
