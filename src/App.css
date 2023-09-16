@@ -9,7 +9,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0; /* Remove default margin */
+  margin: 0; /*Remove default margin; */
   padding: 0; /* Remove default padding */
 }
 

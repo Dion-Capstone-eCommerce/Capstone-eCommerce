@@ -9,7 +9,9 @@ function Footer() {
     <p>(407) 123-4567</p>
     <p>sales@cystalclearsounds.com</p>
     <p>Business Hours:</p>
+    <div style={{ marginLeft: '20px', marginRight: '20px' }}>
     <p>Monday 6am-9pm EST</p>
+    </div>
     <p>Tuesday 6am-9pm EST</p>
     <p>Wednesday 6am-9pm EST</p>
     <p>Thurday 6am-9pm EST</p>
