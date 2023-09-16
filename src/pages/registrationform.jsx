@@ -87,7 +87,7 @@ function RegistrationForm({ BASE_URL }) {
             id="password"
             value={password}
             onChange={e => setPassword(e.target.value)}
-            pattern="^(?=,*\d)(?=,*[a-zA-Z])(?=,*\W).{8,}$"
+            pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"
             required
             title="Password must contain at least one digit, one letter, one special character, and be at least 8 characters long."
           />
