@@ -1,20 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { Shop } from "./pages/shop/shop";
 import "./index.css";
 import NavBar from "./navbar/navbar";
 import Home from "./pages/home";
 import RegistrationForm from "./pages/registrationform";
 import Login from "./pages/login";
-import { logIn, logOut, isLoggedIn } from "./Helpers/authhelpers";
-import { fetchWithHeaders } from "./Helpers/api";
 import { ShopContextProvider } from "./context/shop-context";
 import './App.css';
 import { Cart } from "./pages/cart/cart";
 
 export default function App() {
-  const BASE_URL = 'https://fakestoreapi.com/';
+  const BASE_URL = 'https://fakestoreapi.com';
   const storedToken = localStorage.getItem("authToken"); // Check if there is a token in localStorage
   const [token, setToken] = useState(storedToken || ""); // Set initial value to storedToken
 

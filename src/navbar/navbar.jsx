@@ -43,13 +43,12 @@ function Navbar() {
             </Link>
           </li>
           
-          {!isLoggedIn && (
-            <li className="navbar-item">
+          <li className="navbar-item">
               <Link to="/login" onClick={handleClick} style={{ color: 'black' }}>
                 Sign In<SignIn size={32} color="black"/>
               </Link>
             </li>
-          )}
+          
 
           <li className="navbar-item">
             <Link to="/shop" onClick={handleClick} style={{ color: 'black' }}>

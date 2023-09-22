@@ -33,11 +33,11 @@ function Login({ BASE_URL, handleLoginSuccess }) {
       }
 
       const data = await response.json();
-
-      if (data.success) {
-        handleLoginSuccess(data.data.token); // Call the handleLoginSuccess function to set the token
-        localStorage.setItem("authToken", data.data.token); // Store the token in localStorage
-        navigate("/posts"); // Navigate to the posts page
+console.log (data)
+      if (data.token) {
+        handleLoginSuccess(data.token); // Call the handleLoginSuccess function to set the token
+        localStorage.setItem("authToken", data.token); // Store the token in localStorage
+        navigate("/shop"); // Navigate to the posts page
       } else {
         setErrorMessage("Incorrect username or password"); // Display error message for incorrect credentials
       }
