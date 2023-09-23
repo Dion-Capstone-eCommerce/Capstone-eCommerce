@@ -1,37 +1,10 @@
-.spacer1 {
-    margin-left: 200px;
-    margin-right: 1px;
-  }
-  
-.spacer2 {
-    margin-left: 200px;
-    margin-right: 1px;
-  }
-  
-.spacer3 {
-    margin-left: 175px;
-    margin-right: 1px;
-  }
+.footer {
+  text-align: center;
+  flex-direction: column;
 
-.spacer4 {
-    margin-left: 197px;
-    margin-right: 1px;
-  }
-  
-.spacer5 {
-    margin-left: 210px;
-    margin-right: 1px;
-  }
-  
-.spacer6 {
-    margin-left: 200px;
-    margin-right: 1px;
-  }
-  
-.spacer7 {
-    margin-left: 250px;
-    margin-right: 1px;
-  }
+}
 
-
-  
+table {
+  margin-left: auto;
+  margin-right: auto;
+}

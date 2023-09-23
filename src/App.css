@@ -80,14 +80,6 @@ body {
   }
 }
 
-.footer {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  flex-grow: 1;
-}
-
 button {
   font-size: 15px; /* Adjust the font size */
   padding: 1px 4px; /* Adjust padding for width and height */

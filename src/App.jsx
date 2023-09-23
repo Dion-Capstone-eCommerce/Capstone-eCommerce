@@ -31,11 +31,12 @@ export default function App() {
 
   // Function to handle logout and clear token
   const handleLogout = () => {
-    localStorage.removeItem("authToken"); // Remove the token from localStorage
-    setToken("");  // Clear the token from state
+    localStorage.removeItem("authToken");
+    setToken(null);
+    // Clear the token from state
        // Reload the page to trigger re-render
-    // Reload the page to trigger re-render
-    // window.location.reload();
+       
+    window.location.reload();
   };
 
   return (
@@ -47,10 +48,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<RegistrationForm BASE_URL={BASE_URL} />} />
-          {/* <Route path="/cart" element={<Cart />} /> */}
           <Route path="/shop" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login BASE_URL={BASE_URL} handleLoginSuccess={handleLoginSuccess} />} />
+          {/* <Route path="/logout" element={<Logout BASE_URL={BASE_URL} handleLogout={handleLogout} />} /> */}
         </Routes>
       </Router>
     </ShopContextProvider>

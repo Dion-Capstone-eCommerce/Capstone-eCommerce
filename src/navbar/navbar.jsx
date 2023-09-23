@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   ShoppingCart,
   House,
   SignIn,
   UserPlus,
-  ShoppingBagOpen
+  ShoppingBagOpen,
+  SignOut,
 } from "phosphor-react";
-import './navbar.css';
+import "./navbar.css";
 
-function Navbar() {
+function Navbar({ isLoggedIn, logout}) {
   const location = useLocation();
-  const isLoggedIn = false; // Replace with your login state logic
+  // const isLoggedIn = false; // Replace with your login state logic
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const handleClick = (event) => {
@@ -31,34 +32,48 @@ function Navbar() {
       </button>
       {isDropdownOpen && (
         <ul className="dropdown-menu">
-          <li className="navbar-item" class= 'active'>
-            <Link to="/" onClick={handleClick} style={{ color: 'black' }}>
-              Home <House size={32} color="black"/>
+
+          <li className="navbar-item" class="active">
+            <Link to="/" onClick={handleClick} style={{ color: "black" }}>
+              Home <House size={32} color="black" />
             </Link>
           </li>
 
           <li className="navbar-item">
-            <Link to="/register" onClick={handleClick} style={{ color: 'black' }}>
-              Register <UserPlus size={32} color="black"/>
-            </Link>
-          </li>
-          
-          <li className="navbar-item">
-              <Link to="/login" onClick={handleClick} style={{ color: 'black' }}>
-                Sign In<SignIn size={32} color="black"/>
-              </Link>
-            </li>
-          
-
-          <li className="navbar-item">
-            <Link to="/shop" onClick={handleClick} style={{ color: 'black' }}>
-              <div>Shop</div> <ShoppingBagOpen size={32} color="black"/>
+            <Link
+              to="/register"
+              onClick={handleClick}
+              style={{ color: "black" }}>
+              Register <UserPlus size={32} color="black" />
             </Link>
           </li>
 
+          {isLoggedIn ? (
+        <button onClick={logout}>Logout</button>
+      ) : (
+        
           <li className="navbar-item">
-            <Link to="/cart" onClick={handleClick} style={{ color: 'black' }}>
-              <div>Cart</div> <ShoppingCart size={32} color="black"/>
+            <Link to="/login" onClick={handleClick} style={{ color: "black" }}>
+              Sign In <SignIn size={32} color="black" />
+            </Link>
+            
+          </li>
+      )}
+          {/* <li className="navbar-item">
+              <button onClick={handleLogout} style={{ color: "black" }}>
+                Log Out <SignOut size={32} color="black" />
+              </button>
+            </li> */}
+
+          <li className="navbar-item">
+            <Link to="/shop" onClick={handleClick} style={{ color: "black" }}>
+              <div>Shop</div> <ShoppingBagOpen size={32} color="black" />
+            </Link>
+          </li>
+
+          <li className="navbar-item">
+            <Link to="/cart" onClick={handleClick} style={{ color: "black" }}>
+              <div>Cart</div> <ShoppingCart size={32} color="black" />
             </Link>
           </li>
         </ul>

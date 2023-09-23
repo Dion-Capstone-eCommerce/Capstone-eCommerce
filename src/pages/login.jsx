@@ -33,7 +33,7 @@ function Login({ BASE_URL, handleLoginSuccess }) {
       }
 
       const data = await response.json();
-console.log (data)
+      
       if (data.token) {
         handleLoginSuccess(data.token); // Call the handleLoginSuccess function to set the token
         localStorage.setItem("authToken", data.token); // Store the token in localStorage
