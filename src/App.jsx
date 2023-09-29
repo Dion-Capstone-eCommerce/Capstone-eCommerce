@@ -9,7 +9,7 @@ import Login from "./pages/login";
 import { ShopContextProvider } from "./context/shop-context";
 import './App.css';
 import { Cart } from "./pages/cart/cart";
-
+import Productdetails from "./productdetails";
 export default function App() {
   const BASE_URL = 'https://fakestoreapi.com';
   const storedToken = localStorage.getItem("authToken"); // Check if there is a token in localStorage
@@ -50,6 +50,7 @@ export default function App() {
           <Route path="/register" element={<RegistrationForm BASE_URL={BASE_URL} />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/productdetails/:id" element={<Productdetails />} />
           <Route path="/login" element={<Login BASE_URL={BASE_URL} handleLoginSuccess={handleLoginSuccess} />} />
           {/* <Route path="/logout" element={<Logout BASE_URL={BASE_URL} handleLogout={handleLogout} />} /> */}
         </Routes>
@@ -58,4 +59,3 @@ export default function App() {
     </div>
   );
 }
-

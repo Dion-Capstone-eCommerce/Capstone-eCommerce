@@ -4,12 +4,12 @@ import { PRODUCTS } from "../products";
 export const ShopContext = createContext(null);
 
 const getDefaultCart = () => {
-  let cart = {};
-  for (let i = 1; i < PRODUCTS.length + 1; i++) {
-    cart[i] = 0;
-  }
-  return cart;
+  return PRODUCTS.reduce((cart, product) => {
+    cart[product.id] = 0;
+    return cart;
+  }, {});
 };
+
 
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
@@ -26,8 +26,10 @@ export const ShopContextProvider = (props) => {
   };
 
   const addToCart = (itemId) => {
-    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-  };
+    setCartItems((prev) => {
+      return { ...prev, [itemId]: prev[itemId] + 1 };
+    });
+  };  
 
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));

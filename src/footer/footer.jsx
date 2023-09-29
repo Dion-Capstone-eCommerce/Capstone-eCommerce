@@ -15,6 +15,7 @@ function Footer() {
       <p>Business Hours:</p>
 
       <table style={tableStyle}>
+        <tbody>
         <tr>
           <td>Monday</td>
           <td>8:00 a.m. - 9:00 p.m.</td>
@@ -43,7 +44,9 @@ function Footer() {
           <td>Sunday</td>
           <td>8:00 a.m. - 9:00 p.m.</td>
         </tr>
+        </tbody>
       </table>
+      <p>&copy; 2023 Your Company Name. All Rights Reserved.</p>
     </footer>
   );
 }
