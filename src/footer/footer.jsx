@@ -42,11 +42,11 @@ function Footer() {
         </tr>
         <tr>
           <td>Sunday</td>
-          <td>8:00 a.m. - 9:00 p.m.</td>
+          <td>CLOSED</td>
         </tr>
         </tbody>
       </table>
-      <p>&copy; 2023 Your Company Name. All Rights Reserved.</p>
+      <p>&copy; 2023 Crystal Clear Sounds. All Rights Reserved.</p>
     </footer>
   );
 }

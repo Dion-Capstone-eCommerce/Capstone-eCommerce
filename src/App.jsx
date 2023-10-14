@@ -10,6 +10,7 @@ import { ShopContextProvider } from "./context/shop-context";
 import './App.css';
 import { Cart } from "./pages/cart/cart";
 import Productdetails from "./productdetails";
+
 export default function App() {
   const BASE_URL = 'https://fakestoreapi.com';
   const storedToken = localStorage.getItem("authToken"); // Check if there is a token in localStorage

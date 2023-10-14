@@ -1,39 +1,43 @@
-import React from "react"
-import Product from "./pages/shop/product";
-// import { PRODUCTS } from "../../products";
-// import Product from './product';
-// import './shop.css';
-// 
-import { PRODUCTS } from "./products";
-import Footer from "./footer/footer";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { PRODUCTS } from "./products";
+import { ShopContext } from "./context/shop-context";
 
-const Productdetails = (props) => {
-    const [product, setProduct] = useState({})
-    let {id} = useParams()
-    // for (let i=0; i<PRODUCTS.length;i++){
-    //     if (PRODUCTS[i].id==id){
-    //         setProduct(PRODUCTS[i])
-    //     }
-    // }
-    console.log(id)
-    console.log(PRODUCTS)
-    console.log(product)
-    return (
-        <div className="shop">
-            <div className="shopTitle">
-                <h1>My Shop</h1>
-            </div>
-            <div className="products">
-                 {PRODUCTS.map((product) => (
-                    product.id== id ?   <Product key={product.id} product={product} /> : null
+const ProductDetails = () => {
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
+  const { addToCart } = useContext(ShopContext); // Access addToCart from ShopContext
 
-            ))}
-            </div>
-            <Footer />
-        </div>
-    );
+
+  useEffect(() => {
+    // Fetch the product details based on the ID from the URL
+    const foundProduct = PRODUCTS.find((p) => p.id === parseInt(id));
+
+    if (foundProduct) {
+      setProduct(foundProduct);
+    } else {
+      // Handle the case where the product is not found (e.g., show an error message)
+      setProduct(null);
+    }
+  }, [id]);
+
+  if (!product) {
+    // Handle the case where the product is not found
+    return <div>Product not found.</div>;
+  }
+
+  const handleAddToCart = () => {
+    addToCart(product); // Add the selected product to the cart
+  };
+
+  return (
+    <div>
+      <img src={product.image} alt={product.title} />
+      <p>Price: ${product.price}</p>
+      <p>Description: {product.description}</p>
+      <button className="addToCartBttn" onClick={handleAddToCart}>Add to Cart</button>
+    </div>
+  );
 };
 
-export default Productdetails;
+export default ProductDetails;

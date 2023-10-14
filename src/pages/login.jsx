@@ -78,10 +78,10 @@ function Login({ BASE_URL, handleLoginSuccess }) {
             required
           />
           <button type="button" onClick={togglePasswordVisibility}>
-            {showPassword ? 'Hide' : 'Show'} Password
+            <b>{showPassword ? 'Hide' : 'Show'} Password</b>
           </button>
         </div>
-        <button type="submit">Login</button>
+        <button type="submit"><b>Login</b></button>
       </form>
       <Footer />  
     </div>

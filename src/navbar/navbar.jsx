@@ -35,16 +35,13 @@ function Navbar({ isLoggedIn, logout}) {
 
           <li className="navbar-item" class="active">
             <Link to="/" onClick={handleClick} style={{ color: "black" }}>
-              Home <House size={32} color="black" />
+              <b>Home</b> <House size={32} color="black" />
             </Link>
           </li>
 
           <li className="navbar-item">
-            <Link
-              to="/register"
-              onClick={handleClick}
-              style={{ color: "black" }}>
-              Register <UserPlus size={32} color="black" />
+            <Link to="/register" onClick={handleClick} style={{ color: "black" }}>
+              <b>Register</b> <UserPlus size={32} color="black" />
             </Link>
           </li>
 
@@ -54,26 +51,20 @@ function Navbar({ isLoggedIn, logout}) {
         
           <li className="navbar-item">
             <Link to="/login" onClick={handleClick} style={{ color: "black" }}>
-              Sign In <SignIn size={32} color="black" />
+              <b>Sign-In</b> <SignIn size={32} color="black" />
             </Link>
-            
           </li>
       )}
-          {/* <li className="navbar-item">
-              <button onClick={handleLogout} style={{ color: "black" }}>
-                Log Out <SignOut size={32} color="black" />
-              </button>
-            </li> */}
 
           <li className="navbar-item">
             <Link to="/shop" onClick={handleClick} style={{ color: "black" }}>
-              <div>Shop</div> <ShoppingBagOpen size={32} color="black" />
+              <div><b>Shop</b></div> <ShoppingBagOpen size={32} color="black" />
             </Link>
           </li>
 
           <li className="navbar-item">
             <Link to="/cart" onClick={handleClick} style={{ color: "black" }}>
-              <div>Cart</div> <ShoppingCart size={32} color="black" />
+              <div><b>Cart</b></div> <ShoppingCart size={32} color="black" />
             </Link>
           </li>
         </ul>

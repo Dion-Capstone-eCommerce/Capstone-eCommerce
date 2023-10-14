@@ -81,6 +81,7 @@ body {
 }
 
 button {
+  border: 2px solid rgb(19, 19, 19);
   font-size: 15px; /* Adjust the font size */
   padding: 1px 4px; /* Adjust padding for width and height */
 }
