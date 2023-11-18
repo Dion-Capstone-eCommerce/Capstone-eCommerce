@@ -6,8 +6,8 @@ import { ShopContext } from "./context/shop-context";
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  const { addToCart } = useContext(ShopContext); // Access addToCart from ShopContext
-
+  const { addToCart, cartItems } = useContext(ShopContext); // Access addToCart from ShopContext
+  const cartItemAmount = cartItems[product.id] || 0;
 
   useEffect(() => {
     // Fetch the product details based on the ID from the URL
@@ -35,7 +35,9 @@ const ProductDetails = () => {
       <img src={product.image} alt={product.title} />
       <p>Price: ${product.price}</p>
       <p>Description: {product.description}</p>
-      <button className="addToCartBttn" onClick={handleAddToCart}>Add to Cart</button>
+      <button className="addToCartBttn" onClick={() => addToCart(product.id)}>
+            <b>Add to Cart</b> {cartItemAmount > 0 && <> ({cartItemAmount})</>}
+          </button>
     </div>
   );
 };
