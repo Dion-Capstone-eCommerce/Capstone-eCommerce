@@ -27,7 +27,7 @@ const ProductDetails = () => {
   }
 
   const handleAddToCart = () => {
-    addToCart(product); // Add the selected product to the cart
+    addToCart(product.id); // Add the selected product to the cart
   };
 
   return (
